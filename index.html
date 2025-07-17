@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PEL SEMPROT AJAIB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-purple-700 text-white text-center py-6 shadow">
+    <h1 class="text-3xl lg:text-5xl font-bold">PEL SEMPROT AJAIB 98cm</h1>
+    <p class="text-sm lg:text-lg mt-1">Bersih Lebih Cepat & Efisien</p>
+  </header>
+
+  <!-- Promo Banner -->
+  <section class="w-full px-4 md:px-6 lg:px-0 max-w-5xl mx-auto mt-6 p-6 bg-gradient-to-r from-yellow-100 to-red-100 border border-red-300 rounded-xl shadow-xl text-center">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-red-700 mb-2 animate-pulse">🔥 PROMO GILA HARI INI 🔥</h2>
+    <p class="text-lg font-semibold text-red-800 mb-1">DISKON BESAR 50%</p>
+    <div class="bg-white border border-yellow-400 rounded-lg p-4 inline-block mb-4">
+      <p class="text-sm text-gray-500">Kode Voucher:</p>
+      <span class="text-xl font-bold text-red-600 tracking-widest">FLASH-1607</span>
+      <p class="text-xs text-gray-600 mt-1">* Berlaku hanya hari ini</p>
+    </div>
+
+    <!-- Countdown Timer -->
+    <div class="mb-4">
+      <p class="text-sm text-gray-700 mb-1">Waktu tersisa:</p>
+      <div id="countdown" class="text-2xl font-bold text-red-600"></div>
+    </div>
+
+    <div class="mb-4">
+      <p class="text-lg">Harga Normal:</p>
+      <p class="text-3xl font-bold text-gray-500 line-through">Rp 240.000</p>
+      <p class="mt-2 text-lg font-medium text-gray-800">Harga Sekarang:</p>
+      <p class="text-4xl font-extrabold text-green-600 animate-bounce">Rp 120.000</p>
+    </div>
+    <p class="text-sm text-red-700 italic">*Stok Terbatas — Buruan sebelum kehabisan!</p>
+  </section>
+
+  <!-- Produk -->
+  <main class="w-full px-4 md:px-6 lg:px-0 max-w-5xl mx-auto bg-white p-6 mt-6 rounded-xl shadow-md">
+    <img src="alatpel.jpg" alt="Alat Pel 98cm" class="w-full rounded-lg mb-6 shadow" />
+
+    <h2 class="text-xl font-semibold mb-2">Deskripsi Produk</h2>
+    <p class="text-gray-700 mb-4 leading-relaxed">
+      Alat pel lantai dengan kepala lebar 98 cm, cocok untuk mempercepat pekerjaan rumah Anda.
+      Efisien dan praktis digunakan di rumah, kantor, dan ruang usaha. Dapat membersihkan area 100 m² hanya dalam 5 menit.
+    </p>
+
+    <p class="text-lg font-bold text-green-600 mb-6">Harga Promo: Rp 120.000</p>
+
+    <!-- Tombol WA -->
+    <a href="https://wa.me/6283840027479?text=Halo%20kak%20👋%2C%20saya%20tertarik%20mau%20pesan%20Pel%20Ajaib%20Semprot%2C%20Apakah%20masih%20tersedia%20stock-nya%3F%20Kode%20voucher%20saya%3A%20FLASH-1607"
+       class="block bg-green-500 hover:bg-green-600 text-white text-center font-semibold text-lg px-6 py-4 rounded-lg shadow-md transition duration-300">
+      🟢 Pesan Sekarang via WhatsApp
+    </a>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-white bg-purple-700 mt-10 py-4">
+    &copy; 2025 Toko Alat Pel Lantai. Semua Hak Dilindungi.
+  </footer>
+
+  <!-- Countdown Script -->
+  <script>
+    const countdown = document.getElementById("countdown");
+    const deadline = new Date();
+    deadline.setHours(23, 59, 59, 999); // promo berakhir hari ini jam 23:59
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const t = deadline - now;
+
+      if (t <= 0) {
+        countdown.innerHTML = "🎉 Promo telah berakhir!";
+        countdown.classList.remove("text-red-600");
+        countdown.classList.add("text-gray-500");
+        return;
+      }
+
+      const hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((t % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${hours}j ${minutes}m ${seconds}d`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
